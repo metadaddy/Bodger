@@ -1,0 +1,31 @@
+<apex:page controller="BodgerController">
+  <script>
+  function poller(id) {
+    // Update the status 5 seconds from now
+    setTimeout(function(){
+      updateStatus();
+    }, 5000);
+  }
+  </script>
+  <apex:form >
+    <apex:actionFunction name="updateStatus" action="{!updateStatus}" rerender="output" />
+    <apex:actionFunction name="bodge" action="{!bodge}" rerender="output">
+      <apex:param name="bodgeId" assignTo="{!bodgeId}" value=""/>
+    </apex:actionFunction>
+  </apex:form>
+  <apex:pageBlock title="Apex Classes">
+    <p>
+      Click a class to bodge it!
+    </p>
+    <apex:outputPanel id="output">
+      <p>
+        {!output}
+      </p>
+    </apex:outputPanel>
+    <br/>
+    <apex:pageMessages />
+    <apex:pageBlockTable value="{!apexClasses}" var="apexClass">
+      <apex:column value="{!apexClass.name}" headerValue="Name" onclick="bodge('{!apexClass.id}'); poller('{!apexClass.id}');"/>
+    </apex:pageBlockTable>
+  </apex:pageBlock>
+</apex:page>
