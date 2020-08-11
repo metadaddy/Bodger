@@ -5,11 +5,11 @@ Just for fun - modify ('bodge') Apex Code, using the Tooling API, from Apex!
 
 Open the Bodger page:
 
-![Before](http://metadaddy-sfdc.github.io/Bodger/Before.png)
+![Before](http://metadaddy.github.io/Bodger/Before.png)
 
 Click on a class, wait a few seconds:
 
-![After](http://metadaddy-sfdc.github.io/Bodger/After.png)
+![After](http://metadaddy.github.io/Bodger/After.png)
 
 This is `Tester` before being bodged:
 
